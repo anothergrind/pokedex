@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 
+// defining the properties of a Card
 type CardProps = {
   name: string;
   image: string;
