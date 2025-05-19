@@ -1,4 +1,10 @@
-// Defining what a Pokemon should have in it
+"use client";
+
+import Card from "./components/Card";
+import React from "react";
+import './globals.css';
+
+// defining the properties of a Pokemon
 type Pokemon = {
   name: string;
   sprites: {
@@ -13,32 +19,38 @@ type Pokemon = {
 
 export default async function Page(){
   // randomizing the pokemon pulled from the API
-  const randomizer = Math.floor(Math.random() * 1000) + 1;
-  const randomizer2  = Math.floor(Math.random() * 1000) + 1;
+  const randomizer = Math.floor(Math.random() * 1025) + 1;
+  const randomizer2  = Math.floor(Math.random() * 1025) + 1;
 
   // fetching data from API 
   const first_data = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomizer}`)
   const second = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomizer2}`)
   const pokemon: Pokemon = await first_data.json()
   const pokemon2: Pokemon = await second.json()
-  
-  return(
-    <div>
-      <h1> {pokemon.name} </h1>
-      <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
-      <ul>
-        {pokemon.types.map((p: { type: {name: string } }, index: number) => (
-          <li key={index}>{p.type.name}</li>
-        ))}
-      </ul>
-      <br></br>
-      <h1> {pokemon2.name} </h1>
-      <img src={pokemon2.sprites.front_default} alt={pokemon2.name}/>
-      <ul>
-        {pokemon2.types.map((p: { type: {name: string } }, index: number) => (
-          <li key={index}>{p.type.name}</li>
-        ))}
-      </ul>
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+      <h1 className="text-3xl font-bold mb-8">Random Generated Pokemon</h1>
+      <div className="flex flex-wrap justify-center gap-8">
+        <Card
+          card={{
+            name: pokemon.name,
+            image: pokemon.sprites.front_default,
+            types: pokemon.types.map((t) => t.type.name),
+            onLike: () => {},
+            onDislike: () => {},
+          }}
+        />
+        <Card
+          card={{
+            name: pokemon2.name,
+            image: pokemon2.sprites.front_default,
+            types: pokemon2.types.map((t) => t.type.name),
+            onLike: () => {},
+            onDislike: () => {},
+          }}
+        />
+      </div>
     </div>
-  )
+  );
 }
