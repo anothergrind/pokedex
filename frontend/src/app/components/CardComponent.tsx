@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+
+// Material UI components
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,6 +10,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
+
 import "../styles/CardComponent.css";
 
 // defining the properties of a Card

@@ -4,11 +4,9 @@ import "../styles/navbar.css";
 // Material UI Components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
-import SvgIcon from "@mui/material/SvgIcon";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Stack from "@mui/material/Stack";
 
@@ -34,25 +32,25 @@ export default function Navbar() {
                 Dashboard
               </Button>
             </Link>
-            <Link href="/pages/YourPokemon">
+            <Link href="/your-pokemon">
               <Button variant="text" className="navbar-btn">
                 Your Pokemon
               </Button>
             </Link>
             
-            <Link href="/pages/LikedPokemon">
+            <Link href="/liked-pokemon">
               <Button variant="text" className="navbar-btn">
                 Liked Pokemon
               </Button>
             </Link>
 
-            <Link href="pages/DislikedPokemon">
+            <Link href="/disliked-pokemon">
               <Button variant="text" className="navbar-btn">
                 Disliked Pokemon
               </Button>
             </Link>
 
-            <Link href="/pages/Stats">
+            <Link href="/stats">
               <Button variant="text" className="navbar-btn">
                 Stats
               </Button>

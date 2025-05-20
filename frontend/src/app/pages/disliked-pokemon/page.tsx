@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/DislikedPokemon.css";
 
-export default function DislikedPokemon() {
+export default function Page() {
     return (
         <div className="disliked-pokemon">
         <h1>Disliked Pokemon</h1>

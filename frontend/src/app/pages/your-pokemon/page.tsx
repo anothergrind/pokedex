@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles/YourPokemon.css";
 import "../components/CardComponent"
 
-export default function YourPokemon(){
+export default function Page(){
     return(
         <div className="your-pokemon">
             <h1>Your Pokemon</h1>

@@ -9,7 +9,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
-import "./styles/page.css"; // Import the new CSS file
+import "./styles/page.css";
 
 // defining the properties of a Pokemon
 type Pokemon = {
