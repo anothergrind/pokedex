@@ -1,8 +1,13 @@
 "use client";
 
-import Card from "./components/Card";
+import CardComponent from "./components/CardComponent";
 import Navbar from "./components/navbar";
 import React from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
 
 // defining the properties of a Pokemon
 type Pokemon = {
@@ -17,7 +22,7 @@ type Pokemon = {
   }>;
 };
 
-export default async function Page(){
+export default async function Page() {
   // randomizing the pokemon pulled from the API
   const randomizer = Math.floor(Math.random() * 1025) + 1;
   const randomizer2 = Math.floor(Math.random() * 1025) + 1;
@@ -28,14 +33,18 @@ export default async function Page(){
   const pokemon2: Pokemon = await second.json();
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <Box sx={{ minHeight: "100vh", bgcolor: "grey.100" }}>
       <Navbar />
-      <main className="max-w-7xl mx-auto px-8 py-10">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Dashboard</h1>
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Random Generated Pokemon</h2>
-          <div className="flex flex-wrap gap-8">
-            <Card
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Typography variant="h3" fontWeight="bold" color="text.primary" gutterBottom>
+          Dashboard
+        </Typography>
+        <Paper elevation={0} sx={{ bgcolor: "transparent", mb: 4 }}>
+          <Typography variant="h5" fontWeight="medium" gutterBottom>
+            Random Generated Pokemon
+          </Typography>
+          <Stack direction="row" spacing={4} flexWrap="wrap">
+            <CardComponent
               card={{
                 name: pokemon.name,
                 image: pokemon.sprites.front_default,
@@ -44,7 +53,7 @@ export default async function Page(){
                 onDislike: () => {},
               }}
             />
-            <Card
+            <CardComponent
               card={{
                 name: pokemon2.name,
                 image: pokemon2.sprites.front_default,
@@ -53,9 +62,9 @@ export default async function Page(){
                 onDislike: () => {},
               }}
             />
-          </div>
-        </section>
-      </main>
-    </div>
+          </Stack>
+        </Paper>
+      </Container>
+    </Box>
   );
 }
