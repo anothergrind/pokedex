@@ -15,5 +15,9 @@
 }
 
 .page-stack {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;         /* Prevent wrapping to keep all cards in one row */
+  justify-content: flex-start; /* Align cards to the left */
+  align-items: stretch;        /* Make all cards the same height */
+  overflow-x: auto;            /* Allow horizontal scroll if needed */
+  min-height: 400px;           /* Optional: ensures enough height for cards */
 }
