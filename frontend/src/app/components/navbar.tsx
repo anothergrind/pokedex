@@ -20,20 +20,20 @@ export default function Navbar() {
       <Toolbar className="navbar-toolbar">
         <Stack direction="row" alignItems="center" spacing={4}>
           {/* Logo */}
-          <SvgIcon className="navbar-logo">
-            <svg viewBox="0 0 32 32" fill="none">
-              <path
-                fill="#6366F1"
-                d="M16 0C7.163 0 0 7.163 0 16c0 8.837 7.163 16 16 16s16-7.163 16-16C32 7.163 24.837 0 16 0zm0 29.333C8.636 29.333 2.667 23.364 2.667 16S8.636 2.667 16 2.667 29.333 8.636 29.333 16 23.364 29.333 16 29.333z"
-              />
-            </svg>
-          </SvgIcon>
+          <img
+            src='pokedex_logo.svg'
+            alt="Logo"
+            className="navbar-logo-img"
+            style={{ width: 50, height: 50 }}
+          />
 
           {/* Navigation Links */}
           <Stack direction="row" spacing={3}>
-            <Button variant="contained" disableElevation className="navbar-btn navbar-btn-contained">
-              Dashboard
-            </Button>
+           <Link href="/"> 
+              <Button variant="contained" disableElevation className="navbar-btn navbar-btn-contained">
+                Dashboard
+              </Button>
+            </Link>
             <Link href="/pages/YourPokemon">
               <Button variant="text" className="navbar-btn">
                 Your Pokemon

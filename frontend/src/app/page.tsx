@@ -1,8 +1,9 @@
 "use client";
 
 import CardComponent from "./components/CardComponent";
-import Navbar from "./components/navbar";
 import React from "react";
+
+// Material UI Components
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
@@ -35,7 +36,6 @@ export default async function Page() {
 
   return (
     <Box className="page-root">
-      <Navbar />
       <Container maxWidth="lg" className="page-container">
         <Typography variant="h3" fontWeight="bold" color="text.primary" gutterBottom>
           Dashboard
