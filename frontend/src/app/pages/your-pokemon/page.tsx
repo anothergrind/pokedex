@@ -1,6 +1,5 @@
 import React from 'react';
-import "../styles/YourPokemon.css";
-import "../components/CardComponent"
+import "../../styles/YourPokemon.css";
 
 export default function Page(){
     return(

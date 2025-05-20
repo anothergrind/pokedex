@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Stats.css";
+import "../../styles/Stats.css";
 
 export default function Page() {
     return(

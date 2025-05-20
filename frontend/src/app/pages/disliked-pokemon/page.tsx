@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/DislikedPokemon.css";
+import "../../styles/DislikedPokemon.css";
 
 export default function Page() {
     return (

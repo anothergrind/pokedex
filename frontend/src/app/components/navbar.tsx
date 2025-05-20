@@ -27,30 +27,30 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <Stack direction="row" spacing={3}>
-           <Link href="/"> 
-              <Button variant="contained" disableElevation className="navbar-btn navbar-btn-contained">
+           <Link href="/">
+              <Button variant="contained" className="navbar-btn navbar-btn-contained">
                 Dashboard
               </Button>
             </Link>
-            <Link href="/your-pokemon">
+            <Link href="/pages/your-pokemon">
               <Button variant="text" className="navbar-btn">
                 Your Pokemon
               </Button>
             </Link>
             
-            <Link href="/liked-pokemon">
+            <Link href="/pages/liked-pokemon">
               <Button variant="text" className="navbar-btn">
                 Liked Pokemon
               </Button>
             </Link>
 
-            <Link href="/disliked-pokemon">
+            <Link href="/pages/disliked-pokemon">
               <Button variant="text" className="navbar-btn">
                 Disliked Pokemon
               </Button>
             </Link>
 
-            <Link href="/stats">
+            <Link href="/pages/stats">
               <Button variant="text" className="navbar-btn">
                 Stats
               </Button>
