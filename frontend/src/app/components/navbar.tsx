@@ -1,4 +1,7 @@
 import React from "react";
+import "../styles/navbar.css";
+
+// Material UI Components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -8,7 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import SvgIcon from "@mui/material/SvgIcon";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Stack from "@mui/material/Stack";
-import "../styles/navbar.css";
+
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -24,23 +28,36 @@ export default function Navbar() {
               />
             </svg>
           </SvgIcon>
+
           {/* Navigation Links */}
           <Stack direction="row" spacing={3}>
             <Button variant="contained" disableElevation className="navbar-btn navbar-btn-contained">
               Dashboard
             </Button>
-            <Button variant="text" className="navbar-btn">
-              Team
-            </Button>
-            <Button variant="text" className="navbar-btn">
-              Projects
-            </Button>
-            <Button variant="text" className="navbar-btn">
-              Calendar
-            </Button>
-            <Button variant="text" className="navbar-btn">
-              Reports
-            </Button>
+            <Link href="/pages/YourPokemon">
+              <Button variant="text" className="navbar-btn">
+                Your Pokemon
+              </Button>
+            </Link>
+            
+            <Link href="/pages/LikedPokemon">
+              <Button variant="text" className="navbar-btn">
+                Liked Pokemon
+              </Button>
+            </Link>
+
+            <Link href="pages/DislikedPokemon">
+              <Button variant="text" className="navbar-btn">
+                Disliked Pokemon
+              </Button>
+            </Link>
+
+            <Link href="/pages/Stats">
+              <Button variant="text" className="navbar-btn">
+                Stats
+              </Button>
+            </Link>
+          
           </Stack>
         </Stack>
         <Stack direction="row" alignItems="center" spacing={3}>
