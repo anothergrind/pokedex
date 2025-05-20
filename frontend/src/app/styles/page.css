@@ -1,0 +1,19 @@
+.page-root {
+  min-height: 100vh;
+  background-color: #f5f5f5; /* matches MUI grey.100 */
+}
+
+.page-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.page-paper {
+  background-color: transparent;
+  margin-bottom: 32px;
+  box-shadow: none;
+}
+
+.page-stack {
+  flex-wrap: wrap;
+}

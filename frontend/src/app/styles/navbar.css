@@ -1,0 +1,51 @@
+.navbar-appbar {
+  background-color: #1a2236 !important;
+  box-shadow: none !important;
+}
+
+.navbar-toolbar {
+  justify-content: space-between;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+.navbar-logo {
+  color: #6366F1 !important;
+  font-size: 32px !important;
+}
+
+.navbar-btn {
+  color: #fff !important;
+  font-weight: 500 !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-radius: 16px !important;
+  transition: background 0.2s, opacity 0.2s;
+}
+.navbar-btn:hover {
+  background: #232c43 !important;
+}
+.navbar-btn-contained {
+  background: #232c43 !important;
+  color: #fff !important;
+}
+.navbar-btn-contained:hover {
+  background: #232c43 !important;
+  opacity: 0.85;
+}
+
+.navbar-notification {
+  color: #bdbdbd !important;
+  transition: color 0.2s;
+}
+.navbar-notification:hover {
+  color: #fff !important;
+}
+
+.navbar-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  background-color: #e0e0e0 !important;
+}

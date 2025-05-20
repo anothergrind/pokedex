@@ -1,0 +1,48 @@
+.cardcomponent-card {
+  width: 288px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.cardcomponent-cardcontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0 !important;
+}
+
+.cardcomponent-title {
+  text-transform: capitalize;
+  font-weight: bold !important;
+  margin-bottom: 8px !important;
+}
+
+.cardcomponent-media {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.cardcomponent-typestack {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.cardcomponent-typechip {
+  text-transform: capitalize;
+  background-color: #e3f2fd !important;
+  color: #1976d2 !important;
+  font-size: 14px !important;
+}
+
+.cardcomponent-actions {
+  justify-content: center;
+  width: 100%;
+}

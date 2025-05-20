@@ -8,6 +8,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
+import "../styles/CardComponent.css";
 
 // defining the properties of a Card
 type CardProps = {
@@ -20,29 +21,29 @@ type CardProps = {
 
 export default function CardComponent({ card }: { card: CardProps }) {
   return (
-    <Card sx={{ width: 288, borderRadius: 3, boxShadow: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', p: 2 }}>
-      <CardContent sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', pb: 0 }}>
-        <Typography gutterBottom variant="h6" component="div" sx={{ textTransform: 'capitalize', fontWeight: 'bold', mb: 1 }}>
+    <Card className="cardcomponent-card">
+      <CardContent className="cardcomponent-cardcontent">
+        <Typography gutterBottom variant="h6" component="div" className="cardcomponent-title">
           {card.name}
         </Typography>
         <CardMedia
           component="img"
           image={card.image || "/placeholder.png"}
           alt={card.name}
-          sx={{ width: 128, height: 128, objectFit: 'contain', mb: 2 }}
+          className="cardcomponent-media"
         />
-        <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', justifyContent: 'center', mb: 2 }}>
+        <Stack direction="row" spacing={1} className="cardcomponent-typestack">
           {card.types.map((type, index) => (
             <Chip
               key={index}
               label={type}
-              sx={{ textTransform: 'capitalize', bgcolor: 'primary.light', color: 'primary.dark', fontSize: 14 }}
+              className="cardcomponent-typechip"
               size="small"
             />
           ))}
         </Stack>
       </CardContent>
-      <CardActions sx={{ justifyContent: 'center', width: '100%' }}>
+      <CardActions className="cardcomponent-actions">
         <Button onClick={card.onDislike} color="error" variant="outlined" size="small">
           Dislike
         </Button>

@@ -8,14 +8,15 @@ import Avatar from "@mui/material/Avatar";
 import SvgIcon from "@mui/material/SvgIcon";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import Stack from "@mui/material/Stack";
+import "../styles/navbar.css";
 
 export default function Navbar() {
   return (
-    <AppBar position="static" sx={{ bgcolor: "#1a2236", boxShadow: "none" }}>
-      <Toolbar sx={{ justifyContent: "space-between", px: 4 }}>
+    <AppBar position="static" className="navbar-appbar">
+      <Toolbar className="navbar-toolbar">
         <Stack direction="row" alignItems="center" spacing={4}>
           {/* Logo */}
-          <SvgIcon sx={{ color: "#6366F1", fontSize: 32 }}>
+          <SvgIcon className="navbar-logo">
             <svg viewBox="0 0 32 32" fill="none">
               <path
                 fill="#6366F1"
@@ -25,84 +26,32 @@ export default function Navbar() {
           </SvgIcon>
           {/* Navigation Links */}
           <Stack direction="row" spacing={3}>
-            <Button
-              variant="contained"
-              disableElevation
-              sx={{
-                bgcolor: "#232c43",
-                color: "#fff",
-                fontWeight: 500,
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                "&:hover": { bgcolor: "#232c43", opacity: 0.85 },
-              }}
-            >
+            <Button variant="contained" disableElevation className="navbar-btn navbar-btn-contained">
               Dashboard
             </Button>
-            <Button
-              variant="text"
-              sx={{
-                color: "#fff",
-                fontWeight: 500,
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                "&:hover": { bgcolor: "#232c43" },
-              }}
-            >
+            <Button variant="text" className="navbar-btn">
               Team
             </Button>
-            <Button
-              variant="text"
-              sx={{
-                color: "#fff",
-                fontWeight: 500,
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                "&:hover": { bgcolor: "#232c43" },
-              }}
-            >
+            <Button variant="text" className="navbar-btn">
               Projects
             </Button>
-            <Button
-              variant="text"
-              sx={{
-                color: "#fff",
-                fontWeight: 500,
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                "&:hover": { bgcolor: "#232c43" },
-              }}
-            >
+            <Button variant="text" className="navbar-btn">
               Calendar
             </Button>
-            <Button
-              variant="text"
-              sx={{
-                color: "#fff",
-                fontWeight: 500,
-                px: 2,
-                py: 1,
-                borderRadius: 2,
-                "&:hover": { bgcolor: "#232c43" },
-              }}
-            >
+            <Button variant="text" className="navbar-btn">
               Reports
             </Button>
           </Stack>
         </Stack>
         <Stack direction="row" alignItems="center" spacing={3}>
           {/* Notification Icon */}
-          <IconButton sx={{ color: "#bdbdbd", "&:hover": { color: "#fff" } }}>
+          <IconButton className="navbar-notification">
             <NotificationsNoneIcon />
           </IconButton>
           {/* Profile Avatar */}
           <Avatar
             src="/api/placeholder/32/32"
-            sx={{ width: 32, height: 32, bgcolor: "#e0e0e0" }}
+            className="navbar-avatar"
             alt="Avatar"
           />
         </Stack>

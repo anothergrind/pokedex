@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
+import "./styles/page.css"; // Import the new CSS file
 
 // defining the properties of a Pokemon
 type Pokemon = {
@@ -33,17 +34,17 @@ export default async function Page() {
   const pokemon2: Pokemon = await second.json();
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "grey.100" }}>
+    <Box className="page-root">
       <Navbar />
-      <Container maxWidth="lg" sx={{ py: 10 }}>
+      <Container maxWidth="lg" className="page-container">
         <Typography variant="h3" fontWeight="bold" color="text.primary" gutterBottom>
           Dashboard
         </Typography>
-        <Paper elevation={0} sx={{ bgcolor: "transparent", mb: 4 }}>
+        <Paper elevation={0} className="page-paper">
           <Typography variant="h5" fontWeight="medium" gutterBottom>
             Random Generated Pokemon
           </Typography>
-          <Stack direction="row" spacing={4} flexWrap="wrap">
+          <Stack direction="row" spacing={4} className="page-stack">
             <CardComponent
               card={{
                 name: pokemon.name,
