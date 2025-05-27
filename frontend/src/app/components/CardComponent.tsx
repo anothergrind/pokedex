@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
+import { supabase } from "../lib/supabase";
 
-// Material UI components
+// Material UI
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -18,11 +19,27 @@ type CardProps = {
   name: string;
   image: string;
   types: string[];
-  onLike: () => void;
-  onDislike: () => void;
 };
 
 export default function CardComponent({ card }: { card: CardProps }) {
+  const handleLike = async () => {
+    await supabase.from("pokemon_votes").insert({
+      pokemon_name: card.name,
+      types: card.types,
+      image_url: card.image,
+      liked: true,
+    });
+  };
+
+  const handleDislike = async () => {
+    await supabase.from("pokemon_votes").insert({
+      pokemon_name: card.name,
+      types: card.types,
+      image_url: card.image,
+      liked: false,
+    });
+  };
+
   return (
     <Card className="cardcomponent-card">
       <CardContent className="cardcomponent-cardcontent">
@@ -37,20 +54,15 @@ export default function CardComponent({ card }: { card: CardProps }) {
         />
         <Stack direction="row" spacing={1} className="cardcomponent-typestack">
           {card.types.map((type, index) => (
-            <Chip
-              key={index}
-              label={type}
-              className="cardcomponent-typechip"
-              size="small"
-            />
+            <Chip key={index} label={type} className="cardcomponent-typechip" size="small" />
           ))}
         </Stack>
       </CardContent>
       <CardActions className="cardcomponent-actions">
-        <Button onClick={card.onDislike} color="error" variant="outlined" size="small">
+        <Button onClick={handleDislike} color="error" variant="outlined" size="small">
           Dislike
         </Button>
-        <Button onClick={card.onLike} color="success" variant="outlined" size="small">
+        <Button onClick={handleLike} color="success" variant="outlined" size="small">
           Like
         </Button>
       </CardActions>

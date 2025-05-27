@@ -71,8 +71,6 @@ export default function Page() {
                   name: pokemon.name,
                   image: pokemon.sprites.front_default,
                   types: pokemon.types.map((t) => t.type.name),
-                  onLike: () => {},
-                  onDislike: () => {},
                 }}
               />
             ))}
