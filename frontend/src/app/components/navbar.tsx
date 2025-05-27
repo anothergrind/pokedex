@@ -32,12 +32,7 @@ export default function Navbar() {
                 Dashboard
               </Button>
             </Link>
-            <Link href="/pages/your-pokemon">
-              <Button variant="text" className="navbar-btn">
-                Your Pokemon
-              </Button>
-            </Link>
-            
+    
             <Link href="/pages/liked-pokemon">
               <Button variant="text" className="navbar-btn">
                 Liked Pokemon
